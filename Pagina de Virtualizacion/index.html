@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InfoMedallas</title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="ingreso.html">InfoMedallas</a>
+            </div>
+            <!-- Código de barra superior -->
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- Parte Usuario -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                     <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil del Usuario</a></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                    </ul>
+                </li>
+                <!-- Fin usuario -->
+            </ul>
+            <!-- Fin de barra superior -->
+
+        </nav>
+        <!-- Menú lateral -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+					<li>
+                        <a href="ingreso.html"><i class="fa fa-edit"></i>Ingreso Datos</a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="active-menu"><i class="fa fa-bar-chart-o"></i>Datos</a>
+                    </li>
+                </ul>
+            </div>
+        <!-- Fin Menú lateral -->
+
+        </nav>
+        <!-- Titulo -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            Medallas <small>Recopilación de Juegos Olímpicos</small>
+                        </h1>
+                    </div>
+                </div>
+                <!-- Fin Titulo -->
+
+                <!--Tabla de Medallas-->
+                <div class="row">
+                    <!--Tabla de Medallas por disciplina-->
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"> Medallas por disciplina</div> 
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        
+                                        <table  id="dm" class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Medallas</th>
+                                                    <th>Disciplina</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id = "tablediscipline">
+
+                                            </tbody>      
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin Medallas disciplina-->
+                        <!--Tabla de Medallas por genero-->
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Medallas por Genero</div> 
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Generos</th>
+                                                    <th>Medallas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tablegender">
+                                            </tbody>      
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin Tabla genero-->
+                        <!--Tabla de medallas por ciudad-->
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Medallas por ciudad</div> 
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ciudades</th>
+                                                    <th>Medallas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id = "tablecity">
+                                            </tbody>      
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin Tabla medallas ciudad-->
+                        <!--Tabla de medallas por pais-->
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Medallas por pais</div> 
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Paises</th>
+                                                    <th>Medallas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id= "tablecountry">
+                                            </tbody>      
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin Tabla medallas pais-->
+                        <!--Tabla de medallas por deportes-->
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Medallas por deportes</div> 
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Deportes</th>
+                                                    <th>Medallas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id= "tablesport">
+                                            </tbody>      
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin medallas por deportes-->
+                    </div>
+                    <!-- Fin Tabla Medallas -->
+
+                <!--Cuadros informativos de Medallas-->
+                <!--Nota: Mi idea es presentar los datos del método “get_medals_by_medals” en estos cuadros, si no se puede se hace como los otros-->  
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-gold">
+                            <div class="panel-body">
+                                <i class="glyphicon glyphicon-record fa-5x"></i>
+                                <h3 id="goldMedal"></h3> <!--Se cambia esos números por la variable -->
+                            </div>
+                            <div class="panel-footer back-footer-gold">Medalla de Oro</div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-silver">
+                            <div class="panel-body">
+                                <i class="glyphicon glyphicon-record fa-5x"></i>
+                                <h3 id="bronzeMedal"></h3> <!--Se cambia esos números por la variable -->
+                            </div>
+                            <div class="panel-footer back-footer-silver">Medalla de bronce</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-bronze">
+                            <div class="panel-body">
+                                <i class="glyphicon glyphicon-record fa-5x"></i>
+                                <h3 id="silverMedal"></h3> <!--Se cambia esos números por la variable -->
+                            </div>
+                            <div class="panel-footer back-footer-bronze">Medalla de plata</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--Fin Cuadros informativos-->
+
+				<footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez</a></p></footer>
+            </div>
+        </div>
+    </div>
+          
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <script src="jquery-3.3.1.min.js"></script>
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <!--<script src="assets/js/morris/raphael-2.1.0.min.js"></script>-->
+    <!--<script src="assets/js/morris/morris.js"></script>-->
+    <!-- Custom Js -->
+    <!--<script src="assets/js/custom-scripts.js"></script>-->
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function() {   
+            getJson('discipline');   
+            getJson('sport');  
+            getJson('city');
+            getJson('country');
+            getJson('gender');
+            getJson('medal', false);
+        });
+            
+        //realiza el request a los metodos de web services
+        function getJson(pController, pIsTableResponses = true){
+            $.ajax({
+                    url: 'http://localhost:5000/' + pController,
+                    type: "GET",
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function(data) {
+                       cookData(data, pController, pIsTableResponses);
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                        debugger;
+                    }
+                });
+        }
+        
+        //Realiza el llamado delos metodos para ordenar y utilizar los datos a como sea necesario
+        //data = respuesta json
+        //pController = controllador a realizar el request
+        //pIsTableResponses = verifica si los datos se veran en una table o en un label (por ejemplo el caso de medallas debronce y plata)
+        function cookData(data, pController, pIsTableResponses){
+            
+            //obtiene datos generales, en el diccionario de datos a utilizar
+           var dictionaryWebServiceResponse = generalDataDictionary(data, pController);
+            
+            //si la respuesta es para tablas, ejecute el metodo de append to tables
+            if(pIsTableResponses){
+                appendDataToTables(dictionaryWebServiceResponse, pController);
+            }else{
+                appendDataToLabels(dictionaryWebServiceResponse);
+            }
+        }
+        
+        
+        function generalDataDictionary(data, pController){
+             //Diccionario para almacenar datos generales traidos del servidor
+            var dictionaryWebServiceResponse = {};
+
+            //Recorre los objetos principales de la respuesta jSon del servidor
+            for(var x=0; x < data.length; x++){
+                var result = data[x];
+                var arrayResult = result[pController];
+
+                //Recorre cada nodo hijo de esos objetos, y obtiene el tipo y conteo de medallas
+                for(var i=0; i < arrayResult.length; i++){
+
+                    var jsonObject = arrayResult[i];
+                    var count = jsonObject["count"];
+                    var type = jsonObject["type"];
+
+                    //Si el diccionario no tiene el tipo de *Controller*, ingreselo como un objeto nuevo,
+                    //Si no sume el conteo de medallas anterior con el actual
+                    if(type in dictionaryWebServiceResponse){
+                         dictionaryWebServiceResponse[type] = dictionaryWebServiceResponse[type] + count;
+                    }else{
+                         dictionaryWebServiceResponse[type] = count;
+                    }
+                }
+            }
+
+            return dictionaryWebServiceResponse;
+        }
+        
+        
+        function appendDataToTables(dictionaryWebServiceResponse, pController){
+             var htmlAppend = "";
+                //Recorrer el diccionario y obtener la respuesta
+                for(response in dictionaryWebServiceResponse){
+                    var count = dictionaryWebServiceResponse[response];
+                    var type = response;
+
+                    //ingresar lasfilas y columnas necesarias a las listas para mostrar los datos generales del conteo de medallas
+                    htmlAppend = htmlAppend+ "<tr><td>" + count + "</td><td>" + type + "</td></tr>"
+                }
+
+                //realizar el append a la tabla especifica
+                $("#table" + pController).html(htmlAppend);     
+        }
+        
+        
+        function appendDataToLabels(dictionaryWebServiceResponse){
+             //Recorrer el diccionario y obtener la respuesta
+            for(response in dictionaryWebServiceResponse){
+                var count = dictionaryWebServiceResponse[response];
+                var type = response;
+
+                if(type == "Gold"){
+                    $("#goldMedal").html(count);  
+                }else if(type == "Silver"){
+                    $("#silverMedal").html(count);  
+                }else if(type == "Bronze"){
+                    $("#bronzeMedal").html(count);  
+                }
+            }
+        }
+                                                
+    </script>
+</body>
+</html>
