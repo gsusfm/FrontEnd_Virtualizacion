@@ -106,7 +106,7 @@
                                 var formData = new FormData();
                                 
                                 debugger;
-                                 formData.append(/*'file'*/files[0].name, files[0], files[0].name);
+                                 formData.append(csv_received = request.files[0].name, files[0], files[0].name);
 
                                  $.ajax({  
                                      url:"http://localhost:5000/result",  
